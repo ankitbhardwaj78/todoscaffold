@@ -27,7 +27,6 @@ class TodosController < ApplicationController
   # POST /todos.json
   def create
     @todo = Todo.new(todo_params)
-
     respond_to do |format|
       if @todo.save
         format.html { redirect_to @todo, notice: 'Todo was successfully created.' }
@@ -73,4 +72,4 @@ class TodosController < ApplicationController
     def todo_params
       params.require(:todo).permit(:title, :content, :important, :deadline, :n)
     end
-end
+  end
